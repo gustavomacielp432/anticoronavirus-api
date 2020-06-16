@@ -1,7 +1,7 @@
 module.exports = {
     authSecret: '',
     db: {
-        host : '127.0.0.1',
+        host : 'anticoronavirus.postgres.database.azure.com',
         port: 5432,
         database: '',
         user: '',
