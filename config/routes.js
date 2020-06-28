@@ -13,6 +13,10 @@ module.exports = (app) => {
 
   app.route("/casos").post(app.api.casos.save).get(app.api.casos.get);
 
+  app.route("/buscarHospitaisProximos").get(app.api.casos.hospitaisProximos);
+  
+  app.route("/buscarHospitalMaisProximo").get(app.api.casos.hospitalMaisProximo);
+
   app.route("/casos/:id").put(app.api.casos.save);
 
   app.route("/stats").get(app.api.stat.get);
