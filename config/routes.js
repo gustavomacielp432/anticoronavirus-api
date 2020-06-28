@@ -25,4 +25,7 @@ module.exports = (app) => {
     .route("/localVisitado")
     .post(app.api.locaisVisitados.save)
     .get(app.api.locaisVisitados.get);
+
+  
+  app.route("/lastLocaisVisitados").get(app.api.locaisVisitados.getLastLocais);
 };

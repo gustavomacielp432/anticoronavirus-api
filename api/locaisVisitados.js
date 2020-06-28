@@ -1,4 +1,5 @@
 module.exports = (app) => {
+  const moment = require('moment');
   const { existsOrError, notExistsOrError, equalsOrError } = app.api.validation;
 
   const save = async (req, res) => {
@@ -21,5 +22,16 @@ module.exports = (app) => {
       .catch((err) => res.status(500).send(err));
   };
 
-  return { save, get };
+  const getLastLocais = async (req, res) => {
+    let dataAtual = moment().subtract(14, 'days')
+    app
+      .db("locais_visitados")
+      .select("*")
+      .where('create_at','>=', dataAtual)
+      .andWhere('user_id','1')
+      .then((locais) => res.json(locais))
+      .catch((err) => res.status(500).send(err));
+  };
+
+  return { save, get, getLastLocais };
 };
