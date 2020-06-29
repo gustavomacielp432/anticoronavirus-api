@@ -16,6 +16,6 @@ consign()
     .then('./config/routes.js')
     .into(app)
 
-app.listen(3000, () => {
+app.listen(precess.env.PORT || 3000 , () => {
     console.log('Rodou garoto')
 })
