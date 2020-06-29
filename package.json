@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "node index.js",
     "production": "pm2 start index.js --name knowledge-backend",
     "migrate": "knex migrate:latest"
   },
@@ -19,6 +19,7 @@
     "body-parser": "1.18.3",
     "consign": "0.1.6",
     "cors": "2.8.4",
+    "dotenv": "^8.2.0",
     "express": "4.16.3",
     "jwt-simple": "^0.5.6",
     "knex": "^0.21.1",

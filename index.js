@@ -1,6 +1,8 @@
+require('dotenv').config()
 const app = require('express')()
 const consign = require('consign')
 const db = require('./config/db')
+
 // const mongoose = require('mongoose')
 
 // require('./config/mongodb')
@@ -16,6 +18,6 @@ consign()
     .then('./config/routes.js')
     .into(app)
 
-app.listen(precess.env.PORT || 3000 , () => {
+app.listen(process.env.PORT || 3000 , () => {
     console.log('Rodou garoto')
 })
